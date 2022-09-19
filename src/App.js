@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { getUserData, setUserData } from './redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import DisplayUsers from './components/displayUsers';
+
 
 function App() {
+  
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user)
+  console.log(user)
+
+  const handleClick=()=>{
+      dispatch(getUserData())
+      
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3 className='text-primary'>Display User Data</h3><br></br>
+      <button className='btn btn-success' onClick={handleClick}>Get Data</button>
+      <br></br><br></br>
+      <div> 
+      {user && <DisplayUsers users={user}/>}
+      </div>
     </div>
   );
 }

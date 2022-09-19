@@ -1,0 +1,34 @@
+
+tr:not(:first-child){
+    opacity: 0;
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 30s;
+}
+
+@keyframes animate {
+    from{ opacity: 0;} 
+     to{opacity: 1;} 
+}
+
+.fade-enter {
+    opacity: 0;
+    color: cadetblue;
+    
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-enter{
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
