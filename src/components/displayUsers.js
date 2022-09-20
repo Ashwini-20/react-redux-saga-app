@@ -36,15 +36,12 @@ class DisplayUsers extends React.Component{
     /*arr.map(u=>{
         alert(u.name)
     })*/
+
+    //jquery code to animate each row in a table after 30sec
     $(document).ready(function(){
-        /* $("tr:not(:first-child)").hide()
-         $("table tr").each(function(index){
-         $(this).delay(index*30000).show(1000)
-         })*/
        $("tr:not(:first-child)").each(function(index){
            $(this).css('animation-delay',index*30 + 's');
-       })
-       
+     })       
     })
         
 
